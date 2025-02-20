@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+}
+.header {
+background-color: #fff;
+padding: 20px 10px;
+border-bottom: 1px solid #ccc;
+display: flex;
+align-items: center;
+}
+.logo-container {
+display: flex;
+align-items: center;
+}
+.logo {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+.dashboard-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
+.button-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.button-row {
+display: flex;
+justify-content: space-around;
+width: 300px;
+margin-bottom: 20px;
+}
+.button {
+background-color: #000d2a;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 10px;
+}
+.material-icons {
+font-size: 24px;
+margin-right: 10px;
+}
+footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+text-align: center;
+color: #666;
+padding: 10px;
+background-color: #f2f2f2;
+border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="logo-container">
+<img class="logo" src="https://imagizer.imageshack.com/v2/150x100q70/924/4dxPFB.jpg" alt="Logo">
+<span style="color: #020046; font-weight:bold;">Hey User!</span>
+</div>
+</div>
+<div class="dashboard-content">
+<h1 style="margin-bottom: 20px; color:#072079; font-weight:bold;"> MTN HACKS</h1>
+<div class="button-container">
+<div class="button-row">
+<button class="button" onclick="window.location.href='airtime.html'">
+<i class="material-icons">phone</i> Airtime
+</button>
+<button class="button" onclick="window.location.href='data.html'">
+<i class="material-icons">wifi</i> Data
+</button>
+</div>
+<div class="button-row">
+<button class="button" onclick="window.location.href='bulk.html'">
+<i class="material-icons">message</i> Bulk SMS
+</button>
+<button class="button" onclick="window.location.href='sim.html'">
+<i class="material-icons">sim_card</i> Sim Clone
+</button>
+</div>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<footer>
+Licenced By Median.co inc.
+</footer>
+</body>
+</html>

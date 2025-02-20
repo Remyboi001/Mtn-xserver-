@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulk SMS</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f2f2f2;
+}
+.container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
+h1 {
+margin-bottom: 20px;
+}
+input[type="text"], input[type="number"] {
+padding: 10px;
+border: none;
+border-radius: 5px;
+width: 200px;
+margin-bottom: 20px;
+}
+button {
+background-color: #000d2a;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.error {
+color: red;
+font-size: 12px;
+margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bulk SMS</h1>
+<form>
+<input type="text" id="sender-phone-number" placeholder="Enter sender phone number">
+<div class="error" id="sender-phone-error"></div>
+<input type="text" id="sender-name" placeholder="Enter sender name">
+<div class="error" id="sender-name-error"></div>
+<input type="text" id="receiver-phone-number" placeholder="Enter receiver phone number">
+<div class="error" id="receiver-phone-error"></div>
+<input type="text" id="message" placeholder="Enter message">
+<div class="error" id="message-error"></div>
+<input type="file" id="image" placeholder="Select image (optional)">
+<div class="error" id="image-error"></div>
+<div style="margin-top: 20px;">
+<button class="button" id="send-button" onclick="showSending()">Send</button>
+</div>
+</form>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+document.getElementById('send-button').addEventListener('click', function(event) {
+event.preventDefault();
+showSending();
+});
+
+function showSending() {
+var senderPhoneNumber = document.getElementById("sender-phone-number").value;
+var senderName = document.getElementById("sender-name").value;
+var receiverPhoneNumber = document.getElementById("receiver-phone-number").value;
+var message = document.getElementById("message").value;
+swal({
+title: "Sending...",
+text: "Please wait!",
+timer: 5000,
+icon: "info",
+buttons: false,
+}).then(() => {
+swal({
+title: "Sent!",
+text: `Bulk SMS  sent to ${receiverPhoneNumber}.`,
+icon: "success",
+});
+});
+}
+</script>
+</body>
+</html>
