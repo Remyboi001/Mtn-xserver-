@@ -8,21 +8,12 @@
 <style>
 body {
 font-family: Arial, sans-serif;
-display: flex;
-flex-direction: column;
-align-items: center;
+margin: 0;
 height: 100vh;
 background-color: #f0f0f0;
-}
-.logo-container {
 display: flex;
+justify-content: center;
 align-items: center;
-margin-bottom: 20px;
-}
-.logo {
-width: 50px;
-height: 50px;
-margin-right: 10px;
 }
 form {
 background-color: #fff;
@@ -32,13 +23,24 @@ border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 width: 300px;
 }
+.logo-container {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+justify-content: center;
+}
+.logo {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
 label {
 display: block;
 margin-bottom: 5px;
 }
 input[type="text"], input[type="password"] {
 width: 100%;
-height: 30px;
+height: 25px;
 margin-bottom: 15px;
 padding: 5px;
 border: 1px solid #ccc;
@@ -50,7 +52,7 @@ padding: 5px 10px;
 border: none;
 border-radius: 5px;
 cursor: pointer;
-width: 100%;
+width: 50%;
 }
 button[type="submit"]:hover {
 background-color: #000c35;
@@ -60,50 +62,46 @@ color: red;
 font-size: 12px;
 margin-bottom: 10px;
 }
+h2 {
+text-align: center;
+}
 </style>
 </head>
 <body>
+<form>
 <div class="logo-container">
 <img class="logo" src="https://imagizer.imageshack.com/v2/150x100q70/924/4dxPFB.jpg" alt="Logo">
-<span style="color:#000d2a; font-weight:bold;">MTN HACK</span>
+<span style="color:#000d2a; font-weight:bold;"> MTN XSERVER</span>
 </div>
-<form>
-<h2>Enter Activation Code and Password</h2>
+<h5> Username and Password Required</h5>
 <div class="error" id="error"></div>
-<label for="activation-code">Activation Code:</label>
+<label for="activation-code">Username:</label>
 <input type="text" id="activation-code" name="activation-code">
 <label for="password">Password:</label>
 <input type="password" id="password" name="password">
 <button type="submit" style="font-weight:bold; color:#7d8e00;">Enter</button>
 </form>
-
 <script>
 const form = document.querySelector('form');
 const activationCodeInput = document.querySelector('#activation-code');
 const passwordInput = document.querySelector('#password');
 const errorDiv = document.querySelector('#error');
-
 form.addEventListener('submit', (e) => {
 e.preventDefault();
-
 const activationCode = activationCodeInput.value.trim();
 const password = passwordInput.value.trim();
-
 if (activationCode === '' || password === '') {
 errorDiv.innerText = 'Please fill in all fields!';
 return;
 }
-
-if (activationCode !== 'MTNHACKSERVER') {
-errorDiv.innerText = 'Invalid activation code!';
+if (activationCode !== 'MTNHACK001') {
+errorDiv.innerText = 'Invalid Username!';
 return;
 }
-
-if (password !== 'XServerRemy001') {
+if (password !== 'XServer001') {
 errorDiv.innerText = 'Invalid password!';
 return;
 }
-
 window.location.href = 'dashboard.html';
 });
 </script>
